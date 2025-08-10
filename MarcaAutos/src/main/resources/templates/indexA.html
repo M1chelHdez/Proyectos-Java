@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns: th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>GOMSA</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- nav -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">GOMSA</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Inicio</a>
+					</li>
+						<li class="nav-item">
+						<a class="nav-link active" aria-current="page" th:href="@{/CtrlMarca/listar}">Lista Marcas</a>
+						</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" th:href="@{/CtrlAutos/abrirGuardar}">Nuevo Auto</a>
+					</li>
+				</ul>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Buscar</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<!--tabla -->
+
+	<div class="container">
+		<table class="table table-success table-striped">
+			<thead>
+				<h3 class="text-center">Lista de Autos</h3>
+				<br>
+				<tr>
+					<th>Id</th>
+					<th>Modelo</th>
+					<th>Color</th>
+					<th>Precio</th>
+					<th>Número de Puertas</th>
+					<th>Tipo</th>
+					<th>Marca</th>
+					<th style="color: orange;">Editar</th>
+					<th style="color: red;">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each=" c : ${lista}">
+					<td th:text="${c.id}">id</td>
+					<td th:text="${c.nombre_modelo}">Modelo</td>
+					<td th:text="${c.color}">Color</td>
+					<td th:text="${c.precio}">Precio</td>
+					<td th:text="${c.num_puertas}">Número de Puertas</td>
+					<td th:text="${c.tipo}">Tipo</td>
+					<td th:text="${c.marca.nombre_marca}">Marca</td>
+					<td ><a class="btn btn-warning" th:href="@{/CtrlAutos/abrirEditar/}+${c.id}">Editar</a></td>
+					<td ><a class="btn btn-danger" th:href="@{/CtrlAutos/abrirEliminar/}+${c.id}">Eliminar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!--script-->
+
+<!--popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<!--iconos -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--Jquery -->
+<script scr="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+</html>
