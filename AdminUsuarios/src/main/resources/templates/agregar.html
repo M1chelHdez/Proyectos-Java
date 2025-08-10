@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<title>Home page</title>
+</head>
+
+<body>
+	<!-- Navbar -->
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Admin Usuarios</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="/">Inicio<span
+							class="sr-only">(currentPage)</span></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Navbar -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="card mt-4">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Agregar Usuario</h4>
+
+						<form th:action="@{/register}" method="post">
+
+							<div class="form-group">
+								<label for="">Ingrese El Nombre</label> <input type="text" class="form-control" name="nombre"
+									required>
+							</div>
+
+							<div class="form-group">
+								<label for="">Ingrese Email</label><input type="text" class="form-control" name="email"
+									required>
+							</div>
+
+
+							<div class="form-group">
+								<label for="">Ingresa el género</label> <input type="text" class="form-control" name="genero"
+									required>
+							</div>
+
+
+							<div class="form-group">
+								<label for="">Ingresa el Estatus</label> <input type="text" class="form-control" name="estatus"
+									required>
+							</div>
+
+							<div>
+								<label for="image">Imagen: </label>
+								<input type="file" name="image" accept="image/png, image/jpeg" />
+							</div>
+
+							<div class="text-center">
+								<button class="btn btn-primary">Enviar</button>
+								<button class="btn btn-danger" type="reset">Cancelar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
