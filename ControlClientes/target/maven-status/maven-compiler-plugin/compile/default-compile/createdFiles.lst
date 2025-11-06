@@ -1,0 +1,6 @@
+com\clientes\datos\ClienteDaoJDBC.class
+com\clientes\JakartaRestConfiguration.class
+com\clientes\datos\Conexion.class
+com\clientes\dominio\Cliente.class
+com\clientes\resources\JakartaEE10Resource.class
+com\clientes\web\ServletControlador.class
