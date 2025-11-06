@@ -1,0 +1,7 @@
+com\empleado\config\Conexion.class
+com\empleado\dao\EmpleadoDAO.class
+com\empleado\config\Test.class
+com\empleado\JakartaRestConfiguration.class
+com\empleado\modelo\Empleado.class
+com\empleado\resources\JakartaEE8Resource.class
+com\empleado\controlador\EmpleadoControlador.class
